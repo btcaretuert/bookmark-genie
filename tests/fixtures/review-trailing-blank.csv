@@ -1,0 +1,5 @@
+judgment,id,title,url,original_folder,assigned_folder,confidence
+y,b1,One,a.example.com,F,G,high
+n,b2,Two,b.example.com,F,G,low
+
+

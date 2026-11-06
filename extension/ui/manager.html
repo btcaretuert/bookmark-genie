@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Bookmark Genie</title>
+    <link rel="stylesheet" href="ui.css" />
+  </head>
+  <body class="popup">
+    <header>
+      <h1>Bookmark Genie</h1>
+      <span><a id="open-tab" href="manager.html?tab" target="_blank">Abrir en pestaña</a> · <button id="open-settings" class="link" type="button">Ajustes ↗</button></span>
+    </header>
+
+    <div id="status" class="strip off" role="status">
+      <span id="status-text">Cargando…</span>
+      <button id="status-action" class="link" type="button" hidden></button>
+    </div>
+
+    <div id="result" class="strip ok" role="status" tabindex="-1" hidden>
+      <span id="result-text"></span>
+      <span><button id="result-undo" type="button" hidden>Deshacer</button> <button id="result-close" class="link" type="button" aria-label="Cerrar este aviso">Cerrar</button></span>
+    </div>
+
+    <section id="proposals-section" aria-labelledby="proposals-title" hidden>
+      <h2 id="proposals-title">Por revisar</h2>
+      <ul id="proposals" class="plain"></ul>
+    </section>
+
+    <section aria-labelledby="sort-loose-title">
+      <h2 id="sort-loose-title">Ordenar sueltos</h2>
+      <div id="sort-loose"></div>
+    </section>
+
+    <section aria-labelledby="activity-title">
+      <h2 id="activity-title">Actividad reciente</h2>
+      <ul id="activity" class="plain activity"></ul>
+      <p><button id="activity-more" class="link" type="button" hidden>Ver más</button></p>
+    </section>
+
+    <p id="metrics" class="note" hidden></p>
+
+    <section aria-labelledby="backup-title">
+      <h2 id="backup-title">Respaldo</h2>
+      <p class="note" id="backup-reminder"></p>
+      <button id="backup" type="button">Respaldar ahora</button>
+      <p id="backup-status" class="note" role="status"></p>
+      <ul id="downloads"></ul>
+      <p class="note">Los archivos contienen las URL completas de tus marcadores. Guárdalos en un lugar privado.</p>
+    </section>
+
+    <script type="module" src="manager.js"></script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Bookmark Genie",
+  "version": "0.5.1",
+  "description": "Backs up your bookmarks and, if you turn it on, files the ones you save with Ctrl+D.",
+  "minimum_chrome_version": "134",
+  "permissions": [
+    "bookmarks",
+    "storage",
+    "unlimitedStorage"
+  ],
+  "optional_permissions": [
+    "tabs"
+  ],
+  "optional_host_permissions": [
+    "https://api.openai.com/*",
+    "https://generativelanguage.googleapis.com/*",
+    "https://api.mistral.ai/*",
+    "https://api.x.ai/*",
+    "https://api.deepseek.com/*",
+    "https://api.perplexity.ai/*"
+  ],
+  "background": {
+    "service_worker": "sw.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Bookmark Genie",
+    "default_popup": "ui/manager.html"
+  },
+  "options_ui": {
+    "page": "ui/options.html",
+    "open_in_tab": true
+  }
+}

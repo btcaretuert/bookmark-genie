@@ -1,0 +1,5 @@
+node_modules/
+# Evaluation output contains bookmark titles.
+eval-out/
+# Local agent state, task ledger and links to shared tooling.
+.claude/

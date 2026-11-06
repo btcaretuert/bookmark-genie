@@ -1,0 +1,23 @@
+{
+  "name": "bookmark-genie",
+  "version": "0.5.1",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "description": "Personal Chrome extension that organizes bookmarks with AI.",
+  "scripts": {
+    "test": "node --test --test-timeout=60000 tests/unit/",
+    "eval": "node tools/eval.mjs",
+    "typecheck": "tsc -p .",
+    "check": "npm run typecheck && npm test"
+  },
+  "devDependencies": {
+    "@anthropic-ai/sdk": "1.5.0",
+    "@types/node": "24.19.2",
+    "node-linux-x64": "26.13.0",
+    "typescript": "5.9.3"
+  },
+  "engines": {
+    "node": ">=20.12.0"
+  }
+}

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Ajustes de Bookmark Genie</title>
+    <link rel="stylesheet" href="ui.css" />
+  </head>
+  <body class="page">
+    <header>
+      <h1>Ajustes de Bookmark Genie</h1>
+    </header>
+
+    <section aria-labelledby="sort-title">
+      <h2 id="sort-title">Orden automático (Ctrl+D)</h2>
+      <p class="note">
+        Cuando guardas la página activa con Ctrl+D, espera unos 8 s por si eliges carpeta. Solo ordena lo que
+        guardas directamente en la barra, en «Otros» o en el celular, y lo que reintentas a mano con «Reintentar» (eso también envía desde una subcarpeta). Nunca envía un host privado.
+      </p>
+      <div id="state" class="strip off" role="status"></div>
+      <p class="row"><label><input id="auto-enabled" type="checkbox" /> Activar</label></p>
+      <p class="row">
+        <label><input id="auto-confirm" type="checkbox" /> Confirmar antes de mover</label>
+        <br /><span class="note" id="auto-confirm-note">Recomendado: ofrece cada movimiento como propuesta con un botón «Mover».</span>
+      </p>
+      <p class="row"><label>Modelo <select id="auto-model"></select></label></p>
+      <p class="row">
+        <label>Clave <input id="auto-key" type="password" autocomplete="off" spellcheck="false" size="28" /></label>
+        <span id="auto-key-saved" class="note"></span>
+        <button id="auto-key-delete" type="button" hidden>Borrar clave</button>
+        <button id="auto-key-test" type="button" hidden>Probar la clave</button>
+      </p>
+      <p id="auto-key-test-result" class="note" role="status"></p>
+
+      <h2>Datos que se envían</h2>
+      <ul id="auto-policy" class="note"></ul>
+      <details>
+        <summary>Ver la política completa del proveedor</summary>
+        <pre id="auto-policy-full" class="note"></pre>
+      </details>
+      <p id="auto-consent-row" class="row"><label><input id="auto-consent" type="checkbox" /> <span id="auto-consent-text"></span></label></p>
+      <p class="row">
+        <label>Contexto
+          <select id="auto-context">
+            <option value="full">Completo (nombres de carpeta, ejemplos y sueltos)</option>
+            <option value="bookmark-only">Solo el marcador y los nombres de tus carpetas</option>
+          </select>
+        </label>
+        <span class="note" id="auto-context-note"></span>
+      </p>
+      <fieldset class="row">
+        <legend>Carpetas excluidas (nunca se envían, ni como ejemplo ni como suelto)</legend>
+        <div id="auto-excluded" class="folders"></div>
+      </fieldset>
+      <p class="row">
+        <label>Máximo de llamadas por día <input id="auto-max-calls" type="number" min="1" max="1000" step="1" aria-describedby="auto-max-error" /></label>
+        <span id="auto-max-error" class="error" role="alert"></span>
+      </p>
+      <p class="note">Al guardar con «Activar», Chrome pedirá leer la pestaña activa (lo muestra como «historial de navegación») y conectar con el proveedor elegido.</p>
+      <button id="auto-save" class="primary" type="button">Guardar</button>
+      <p id="auto-status" class="note" role="status"></p>
+      <p id="auto-usage" class="note"></p>
+      <details id="auto-sent-box" hidden>
+        <summary id="auto-sent" class="note">Ver qué se envió</summary>
+        <ul id="auto-sent-list" class="note"></ul>
+      </details>
+    </section>
+
+    <section aria-labelledby="sort-loose-title">
+      <h2 id="sort-loose-title">Ordenar sueltos</h2>
+      <p class="note">Propone carpetas, existentes o nuevas, para los marcadores sueltos de la carpeta que elijas. Nunca corre solo, y nada se mueve hasta que aceptas las propuestas en la ventana de la extensión.</p>
+      <div id="sort-loose"></div>
+    </section>
+
+    <section aria-labelledby="roots-title">
+      <h2 id="roots-title">Marcadores por raíz</h2>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Raíz</th><th>Almacenamiento</th><th>Marcadores</th><th>Carpetas</th></tr></thead>
+          <tbody id="counts"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <script type="module" src="options.js"></script>
+  </body>
+</html>
